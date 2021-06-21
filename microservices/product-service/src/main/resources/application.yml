@@ -1,0 +1,27 @@
+server.port: 7002
+
+spring:
+  jpa:
+    show_sql: true
+    format_sql: true
+    hibernate:
+      ddl-auto: none
+    properties:
+      hibernate:
+        show_sql: true
+        format_sql: true
+        dialect: org.hibernate.dialect.MySQL57Dialect
+
+
+  datasource:
+    initialization-mode: always
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/product?serverTimezone=UTC&characterEncoding=UTF-8
+    username: user
+    password: pwd
+
+---
+spring.profiles: docker
+
+server.port: 8080
+
